@@ -1,0 +1,45 @@
+# Pages CMS 설정 — 이 파일이 '쉬운 관리자 화면'을 만듭니다.
+# 관리자 주소: https://app.pagescms.org  (깃허브 계정으로 로그인)
+
+media:
+  input: assets/images
+  output: /assets/images
+
+content:
+  - name: posts
+    label: 글
+    type: collection
+    path: _posts
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, date]
+      primary: title
+      sort: [date]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: 제목
+        type: string
+      - name: date
+        label: 날짜
+        type: date
+      - name: description
+        label: 검색 결과에 보일 한 줄 소개
+        type: text
+      - name: body
+        label: 본문
+        type: rich-text
+
+  - name: about
+    label: 소개 페이지
+    type: file
+    path: about.md
+    fields:
+      - name: title
+        label: 제목
+        type: string
+      - name: body
+        label: 본문
+        type: rich-text

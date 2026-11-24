@@ -1,0 +1,37 @@
+# ───────── 이 파일에서 "★" 표시된 곳만 바꾸면 됩니다 ─────────
+title: "내 블로그"            # ★ 블로그 이름
+description: "나만의 글을 쓰는 곳"   # ★ 구글 검색 결과에 보일 소개문
+lang: ko_KR
+author: "이름"                # ★ 필명
+
+# ★ 주소: https://깃허브아이디.github.io  (저장소 이름이 깃허브아이디.github.io 일 때)
+url: "https://YOUR-ID.github.io"
+baseurl: ""
+
+# ★ 구글 서치콘솔에서 'HTML 태그' 인증 시 받은 코드를 아래에 넣고 앞의 # 을 지우세요
+# webmaster_verifications:
+#   google: "여기에-코드"
+
+permalink: /posts/:year/:month/:day/:title/
+timezone: Asia/Seoul
+markdown: kramdown
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+  - scope:
+      path: ""
+    values:
+      layout: page
+
+exclude:
+  - README.md
+  - .pages.yml
